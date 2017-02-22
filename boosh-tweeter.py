@@ -38,7 +38,7 @@ def main():
 
     api = get_api(cfg)
     current = get_current(CURRENT_URL)
-    if "Live: " in current:
+    if "Live: " in current and len(current) > 7:
         last = get_last_tweet(api)
         if current in last:
             pass
