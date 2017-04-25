@@ -44,7 +44,7 @@ def main():
             pass
         else:
             print("Updating Twitter with: %s" % current)
-            api.update_status(status="%s http://boosh.fm" % current)
+            api.update_status(status="%s Listen now: http://boosh.fm" % current)
     else:
         pass
 
