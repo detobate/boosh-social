@@ -6,11 +6,13 @@ from facebookkeys import *
 
 CURRENT_URL = "http://stream.boosh.fm/current"
 IMAGES = "/images/"
-debug = False
+debug = True
 
 def find_image(show):
     show = show.lstrip("Live: ").lower()
-    path = os.getcwd() + IMAGES + show.rstrip()
+    path = os.path.dirname(os.path.abspath(__file__)) + IMAGES + show.rstrip()
+    if debug:
+        print("Looking for %s.jpg and %s.png" % (path, path))
     if os.path.isfile(path + '.jpg'):
         file = path + '.jpg'
     elif os.path.isfile(path + '.png'):
@@ -39,7 +41,7 @@ def main():
     }
 
     api = facebook.GraphAPI(cfg['access_token'])
-    current = get_current(CURRENT_URL)
+    current = get_current(CURRENT_URL).rstrip()
 
     if "Live: " in current and len(current) > 7:
         last = get_previous(api, cfg)
@@ -53,17 +55,17 @@ def main():
                 if debug:
                     print("Found image: %s" % file)
                 image = open(file, "rb")
-                message = current + "Listen now: Boosh.FM"
+                message = current + "\nListen now: Boosh.FM"
                 api.put_photo(message=message,
                                image=image.read())
                 image.close()
             else:
                 if debug:
                     print("No image found for show: %s" % current)
-                api.put_wall_post("%s Listen now: Boosh.FM" % current)
+                api.put_wall_post("%s \nListen now: Boosh.FM" % current)
     else:
         pass
 
 
 if __name__ == "__main__":
-  main()
+    main()
