@@ -1,9 +1,23 @@
 #!/usr/bin/env python3
 import facebook
 import requests
+import os
 from facebookkeys import *
 
 CURRENT_URL = "http://stream.boosh.fm/current"
+IMAGES = "/images/"
+debug = False
+
+def find_image(show):
+    show = show.lstrip("Live: ").lower()
+    path = os.getcwd() + IMAGES + show.rstrip()
+    if os.path.isfile(path + '.jpg'):
+        file = path + '.jpg'
+    elif os.path.isfile(path + '.png'):
+        file = path + '.png'
+    else:
+        file = None
+    return file
 
 def get_previous(api, cfg):
     try:
@@ -19,23 +33,36 @@ def get_current(url):
     return(r.text)
 
 def main():
-  cfg = {
+    cfg = {
     "page_id"      : page_id,
     "access_token" : access_token
     }
 
-  api = facebook.GraphAPI(cfg['access_token'])
-  current = get_current(CURRENT_URL)
+    api = facebook.GraphAPI(cfg['access_token'])
+    current = get_current(CURRENT_URL)
 
-  if "Live: " in current and len(current) > 7:
-      last = get_previous(api, cfg)
-      if current in last:
-          pass
-      else:
-          print("Updating Facebook with: %s" % current)
-          status = api.put_wall_post("%s Listen now: Boosh.FM" % current)
-  else:
-      pass
+    if "Live: " in current and len(current) > 7:
+        last = get_previous(api, cfg)
+        if current in last:
+            pass
+        else:
+            if debug:
+                print("Updating Facebook with: %s" % current)
+            file = find_image(current)
+            if file is not None:
+                if debug:
+                    print("Found image: %s" % file)
+                image = open(file, "rb")
+                message = current + "Listen now: Boosh.FM"
+                api.put_photo(message=message,
+                               image=image.read())
+                image.close()
+            else:
+                if debug:
+                    print("No image found for show: %s" % current)
+                api.put_wall_post("%s Listen now: Boosh.FM" % current)
+    else:
+        pass
 
 
 if __name__ == "__main__":
