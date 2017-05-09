@@ -3,6 +3,7 @@ import facebook
 import tweepy
 import requests
 import os
+from time import sleep
 from twitterkeys import *
 from facebookkeys import *
 
@@ -94,6 +95,7 @@ def main():
     "access_token" : FB_ACCESS_TOKEN
     }
 
+    sleep(3)
     current = get_current(CURRENT_URL).rstrip()
 
     if "Live: " in current and len(current) > 7:
