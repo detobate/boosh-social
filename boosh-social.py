@@ -7,7 +7,7 @@ from time import sleep
 from twitterkeys import *
 from facebookkeys import *
 
-CURRENT_URL = "http://stream.boosh.fm/current"
+CURRENT_URL = "https://boosh.fm/current"
 IMAGES = "/images/"
 TW_USER = "booshfm"
 debug = True
