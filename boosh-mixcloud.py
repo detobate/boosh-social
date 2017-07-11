@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import pyaml, slugify
-import mixcloud, requests, sys
+import mixcloud, requests, sys, os
 from mixcloudkeys import *
 
 debug = True
@@ -35,14 +35,15 @@ def main():
 
     access_token = auth_mixcloud()
     #m = mixcloud.Mixcloud(access_token=access_token)
-    shows = load_shows(showfile)
+    path = os.path.dirname(os.path.abspath(__file__)) + "/"
+    shows = load_shows(path + showfile)
     try:
         showname = mp3file.rpartition(" - ")[0]  # Raw show name, excluding date
         fullshowname = mp3file.rpartition(".")[0]  # Including date
         showdate = mp3file.rpartition(".")[0].rpartition(" - ")[2]
     except:
         print("Couldn't parse filename: %s" % (mp3file))
-
+        exit(1)
     try:
         int(showdate)
     except:
@@ -60,7 +61,7 @@ def main():
                        'percentage_music': 100,
                        'description': show['desc'],
                        }
-            with open(mp3file, 'br') as mp3:
+            with open(mp3file, 'rb') as mp3:
                 files = {'mp3': mp3.read()}
             try:
                 for num, tag in enumerate(show['tags']):
@@ -68,7 +69,7 @@ def main():
             except:
                 pass
             try:
-                image_file = image_path + show['picturefile']
+                image_file = path + image_path + show['picturefile']
                 files['picture'] = open(image_file, 'rb')
             except:
                 print("Couldn't find an image file for show: %s" % (show['title']))
