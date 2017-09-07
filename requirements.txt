@@ -1,2 +1,4 @@
 tweepy
 facebook
+requests
+mixcloud

@@ -1,181 +1,236 @@
-- desc: 
+- title: testing
+  desc: Testing with Testy McTesty Face
+  picturefile: testing.png
+  tags:
+  - test
+- title: Soul Work with Bass Exotic, Esben Smith, Jason Ruff and Csaba Gyori
+  desc:
   picturefile: soul work.jpg
   tags:
-  title: Soul Work with Bass Exotic, Esben Smith, Jason Ruff and Csaba Gyori
-- desc: The latest and greatest in West Coast underground house, every Tuesday from 10pm to midnight PST. Taco Tuesdays Radio with hosts Jesse Austin, Jimmy Kennedy, Jack Elgin, Matthew Brian, and Ethan Kent.
+- title: Taco Tuesdays with the Make America Dance Again crew
+  desc: The latest and greatest in West Coast underground house, every Tuesday from 10pm to midnight PST. Taco Tuesdays Radio with hosts Jesse Austin, Jimmy Kennedy, Jack Elgin, Matthew Brian, and Ethan Kent.
   picturefile: taco tuesdays with the make america dance again crew.jpg
   tags:
   - House
   - TacoTuesdaysRadio
-  title: Taco Tuesdays with the Make America Dance Again crew
-- desc: 
+- title: Extra Sensory Projections with Travi
+  desc:
   picturefile: extra sensory projections with travi.jpg
   tags:
-  title: Extra Sensory Projections with Travi
-- desc: 
+  - bassline
+  - garage
+  - breaks
+  - house
+  - hip hop
+- title: Live aus Berlin with Martin RP
+  desc:
   picturefile: live aus berlin with martin rp.jpg
   tags:
-  title: Live aus Berlin with Martin RP
-- desc: 
+- title: The DnB Showcase with Redfoot
+  desc:
   picturefile: the dnb showcase with redfoot.jpg
   tags:
   - dnb
   - drum & bass
   - drum and bass
-  title: The DnB Showcase with Redfoot
-- desc: 
+  - jungle
+  - drum step
+- title: The "Hey, I like that!" Show with Jayji
+  desc:
   picturefile: the "hey, i like that!" show with jayji.jpg
   tags:
-  title: The "Hey, I like that!" Show with Jayji
-- desc: 
+- title: The Bass and Drum Show with Rhys & Tom
+  desc:
   picturefile: the bass and drum show with rhys & tom.jpg
   tags:
   - dnb
   - drum & bass
   - drum and bass
-  title: The Bass and Drum Show with Rhys & Tom
-- desc: 
+- title: Kicked Out Radio with Big Bry
+  desc:
   picturefile: kicked out radio with big bry.jpg
   tags:
-  title: Kicked Out Radio with Big Bry
-- desc: 
+  - hip hop
+  - breaks
+  - drum & bass
+  - house
+- title: Protoculture with Gozu
+  desc:
   picturefile: protoculture with gozu.jpg
   tags:
-  title: Protoculture with Gozu
-- desc: 
+- title: Stupid Sounds with DisKo Stu
+  desc:
   picturefile: stupid sounds with disko stu.jpg
   tags:
-  title: Stupid Sounds with DisKo Stu
-- desc: 
+  - drum & bass
+  - electro
+  - house
+  - tech house
+  - breaks
+- title: This, That & The Other with DBH
+  desc:
   picturefile: this, that & the other with dbh.png
   tags:
-  title: This, That & The Other with DBH
-- desc: 
+  - funk
+  - disco
+  - house
+  - breaks
+  - bass
+- title: Timewave w/ Novelty
+  desc:
   picturefile: timewave w novelty.jpg
   tags:
-  title: Timewave w/ Novelty
-- desc: 
+- title: PROPA Radio
+  desc:
   picturefile: propa radio.jpg
   tags:
-  - bass
-  title: PROPA Radio
-- desc: 
+  - dubstep
+  - jungle
+  - footwork
+  - grime
+  - techno
+- title: Static Radio
+  desc:
   picturefile: static radio.jpg
   tags:
-  title: Static Radio
-- desc: 
+- title: Covert Action with DJ Lurks
+  desc:
   picturefile: covert action with dj lurks.jpg
   tags:
-  title: Covert Action with DJ Lurks
-- desc: 
+- title: House Gone Wild International with Hariel & Lisa
+  desc:
   picturefile: house gone wild international with hariel & lisa.jpg
   tags:
   - house
-  title: House Gone Wild International with Hariel & Lisa
-- desc: 
+- title: Liquid Culture with Nick Sandford
+  desc:
   picturefile: liquid culture with nick sandford.jpg
   tags:
   - dnb
   - drum & bass
   - drum and bass
-  - liquid dnb
-  title: Liquid Culture with Nick Sandford
-- desc: 
+  - liquid
+- title: The DNB Hour with Freecell
+  desc:
   picturefile: the dnb hour with freecell.jpg
   tags:
   - dnb
   - drum & bass
   - drum and bass
-  title: The DNB Hour with Freecell
-- desc: 
+- title: Jammin with Jay
+  desc:
   picturefile: jammin with jay.jpg
   tags:
   - dnb
   - drum & bass
   - drum and bass
-  - liquid dnb
-  title: Jammin with Jay
-- desc: 
+  - liquid
+- title: Creepin it Real
+  desc:
   picturefile: creepin it real.jpg
   tags:
   - house
-  - glitch hop
-  title: Creepin it Real
-- desc: 
+  - funk
+  - deep house
+  - breaks
+  - dnb
+- title: Sounds from the Noiz Dojo with Ivan Gregory
+  desc:
   picturefile: sounds from the noiz dojo with ivan gregory.jpg
   tags:
-  title: Sounds from the Noiz Dojo with Ivan Gregory
-- desc: 
+- title: Chris G
+  desc:
   picturefile: chris g.jpg
   tags:
-  title: Chris G
-- desc: Weekly dnb, liquid, and neuro
+- title: Detrimental with Det
+  desc: Weekly drum & bass, from liquid to neuro
   picturefile: detrimental with det.jpg
   tags:
   - dnb
   - drum & bass
   - drum and bass
-  - liquid dnb
+  - liquid
   - neurofunk
-  title: Detrimental with Det
-- desc: Your weekly dose of fresh liquid, neuro, and dancefloor drum and bass
+- title: Something Faded with Lambdaix
+  desc: Your weekly dose of fresh liquid, neuro, and dancefloor drum and bass
   picturefile: something faded with lambdaix.png
   tags:
-  - dnb
   - drum & bass
   - drum and bass
-  - liquid dnb
+  - liquid
   - neurofunk
-  title: Something Faded with Lambdaix
-- desc: 
+  - dancefloor
+- title: Audio Indiika with Matthew Brian
+  desc:
   picturefile: audio indiika with matthew brian.jpg
   tags:
-  title: Audio Indiika with Matthew Brian
-- desc: 
+- title: Divinity Live with Karma & Luna
+  desc:
   picturefile: divinity live with karma & luna.jpg
   tags:
-  title: Divinity Live with Karma & Luna
-- desc: 
+- title: Soul:Rebel Radio
+  desc:
   picturefile: soul:rebel radio.png
   tags:
   - house
-  title: Soul:Rebel Radio
-- desc: 
+- title: Straight Outta Crompton
+  desc:
   picturefile: straight outta crompton.jpg
   tags:
-  title: Straight Outta Crompton
-- desc: 
+- title: Run-out Groove Radio with Kwrk
+  desc: Multi-genre show, hosted by a vinyl addict
   picturefile: run-out groove radio with kwrk.jpg
   tags:
-  title: Run-out Groove Radio with Kwrk
-- desc: 
+  - dnb
+  - hip hop
+  - house
+  - funk
+  - electronica
+- title: Burning a Hole with Pocket Lipps
+  desc:
   picturefile: burning a hole with pocket lipps.jpg
   tags:
+  - house
+  - deep house
+  - techno
+  - electro
   - bass
-  title: Burning a Hole with Pocket Lipps
-- desc: 
+- title: Discordia
+  desc:
   picturefile: discordia.png
   tags:
-  title: Discordia
-- desc: 
+- title: Wandering Munk with Munk
+  desc:
   picturefile: wandering munk with munk.jpg
   tags:
-  title: Wandering Munk with Munk
-- desc: 
+- title: Rex Rulah Radio with Soul Salaam
+  desc:
   picturefile: rex rulah radio with soul salaam.jpg
   tags:
-  title: Rex Rulah Radio with Soul Salaam
-- desc: 
+- title: Soulcast with LOPET
+  desc:
   picturefile: soulcast with lopet.jpg
   tags:
   - dnb
   - drum & bass
   - drum and bass
-  - liquid dnb
+  - liquid
   - Soulcast
-  title: Soulcast with LOPET
-- desc: 
+- title: Pidgeon Neck with DJ SB
+  desc:
   picturefile: pidgeon neck with dj sb.jpg
   tags:
-  title: Pidgeon Neck with DJ SB
-
+- title: HDR's Spectrum Show
+  desc:
+  picturefile: hdr.jpg
+  tags:
+  - dnb
+  - drum & bass
+  - jungle
+  - neurofunk
+  - liquid
+- title: The Cake Mix Sessions with The Big G
+  desc:
+  picturefile: cake mix.jpg
+  tags:
+  - progressive house

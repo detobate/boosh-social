@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
-import pyaml, slugify
-import mixcloud, requests, sys, os
+import mixcloud
+import requests
+import sys
+import os
 from mixcloudkeys import *
+from booshsocial.common import find_show
+from config import *
 
-debug = True
-showfile = "shows.yaml"
-image_path = "images/"
 base_url = 'https://api.mixcloud.com/'
 PIDFILE="/tmp/boosh_recording.pid"
 
-def load_shows(yaml):
-    with open(yaml) as shows:
-        shows = pyaml.yaml.load(shows)
-    return shows
 
 def check_existing(slug):
     r = requests.get(base_url + slug)
@@ -44,8 +41,7 @@ def main():
         exit(1)
 
     access_token = auth_mixcloud()
-    path = os.path.dirname(os.path.abspath(__file__)) + "/"
-    shows = load_shows(path + showfile)
+
     try:
         showname = mp3file.rpartition(" - ")[0]  # Raw show name, excluding date
         fullshowname = mp3file.rpartition(".")[0]  # Including date
@@ -57,46 +53,45 @@ def main():
         int(showdate)
     except:
         print("Couldn't find the show date in the filename")
+        exit(1)
 
-    for show in shows:
-        if show['title'].lower() == showname.lower():
-            if debug:
-                print("Found show: %s" % show['title'])
-            name = fullshowname
-            key = "booshfm/" + mixcloud.slugify(name)
-            if debug:
-                print("Key: %s" % key)
+    show = find_show(showname)
+    if show is not None:
+        name = fullshowname
+        key = "booshfm/" + mixcloud.slugify(name.replace("'", ""))
+        if debug:
+            print("Key: %s" % key)
 
-            exists = check_existing(key)
-            if exists:
-                print("Show already exists: %s" % ("https://mixcloud.com/" + key))
-                exit(1)
-            elif not exists:
-                payload = {'name': name,        # Use the filename which includes datestamp
-                           'percentage_music': 100,
-                           'description': show['desc'],
-                           }
-                with open(mp3file_full, 'rb') as mp3:
-                    files = {'mp3': mp3.read()}
+        exists = check_existing(key)
+        if exists:
+            print("Show already exists: %s" % ("https://mixcloud.com/" + key))
+            exit(1)
+        elif not exists:
+            payload = {'name': name,        # Use the filename which includes datestamp
+                       'percentage_music': 100,
+                       'description': show['desc'],
+                       }
+            with open(mp3file_full, 'rb') as mp3:
+                files = {'mp3': mp3.read()}
+            try:
+                for num, tag in enumerate(show['tags']):
+                    payload['tags-%s-tag' % num] = tag
+            except:
+                pass
+            if show['picturefile'] is not None:
+                filename = os.path.dirname(os.path.abspath(__file__)) + IMAGES + show['picturefile']
                 try:
-                    for num, tag in enumerate(show['tags']):
-                        payload['tags-%s-tag' % num] = tag
+                    files['picture'] = open(filename, 'rb')
                 except:
-                    pass
-                try:
-                    image_file = path + image_path + show['picturefile']
-                    files['picture'] = open(image_file, 'rb')
-                except:
-                    print("Couldn't find an image file for show: %s" % (show['title']))
-                    pass
+                    print("Couldn't open image file: %s" % (filename))
 
-                r = requests.post(base_url + "upload/",
-                                  data=payload,
-                                  params={'access_token': access_token},
-                                  files=files)
-                if debug:
-                    print(r.status_code)
-                    print(r.text)
+            r = requests.post(base_url + "upload/",
+                              data=payload,
+                              params={'access_token': access_token},
+                              files=files)
+            if debug:
+                print(r.status_code)
+                print(r.text)
 
 
 if __name__ == "__main__":
