@@ -1,3 +1,7 @@
 .idea
+.gitignore
+.DS_Store
+__pycache__
 twitterkeys.py
 facebookkeys.py
+mixcloudkeys.py
